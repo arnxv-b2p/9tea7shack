@@ -6,7 +6,7 @@ emoji: 🐳
 sdk: static
 pinned: false
 tags:
-  - deepsite-v3
+  - Born2play
 ---
 
 # Welcome to Arnav's New Project!
