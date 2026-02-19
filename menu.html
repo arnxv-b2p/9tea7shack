@@ -6,6 +6,133 @@
 <title> Café 9tea7 Shack</title>
 
 <style>
+.menu-controls {
+    padding: 30px 8%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#searchInput {
+    padding: 10px 15px;
+    width: 260px;
+    border-radius: 25px;
+    border: 2px solid #c8a97e;
+    outline: none;
+    font-size: 14px;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 2px solid #c8a97e;
+    background: white;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.filter-btn.active {
+    background: #3e2723;
+    color: white;
+    border-color: #3e2723;
+}
+
+/* Veg / NonVeg Symbol */
+.food-type {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 14px;
+    border: 2px solid;
+    margin-left: 6px;
+}
+
+.food-type span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.food-type.veg {
+    border-color: green;
+}
+.food-type.veg span {
+    background: green;
+}
+
+.food-type.nonveg {
+    border-color: red;
+}
+.food-type.nonveg span {
+    background: red;
+}
+
+/* Allergen Tags */
+.allergens {
+    margin-top: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.allergen-tag {
+    background: #f5e6d3;
+    color: #6d4c41;
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 12px;
+}
+
+ /* OPTION STYLING */
+
+        .option-group {
+            margin-top: 15px;
+        }
+
+        .option-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .option-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .option-btn {
+            padding: 8px 16px;
+            border-radius: 30px;
+            border: 2px solid #c8a97e;
+            background: #ffffff;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .option-btn:hover {
+            background: #f5e6d3;
+            transform: scale(1.05);
+        }
+
+        .option-btn.active {
+            background: #3e2723 !important;
+            color: #ffffff !important;
+            border-color: #3e2723 !important;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
 *{
     margin:0;
     padding:0;
@@ -137,6 +264,241 @@ footer{
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
+/* ===== GLOBAL ===== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f8f6f3;
+  color: #333;
+}
+
+/* ===== SEARCH + FILTER BAR ===== */
+
+.top-controls {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 12px;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+#searchInput {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.filter-btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 25px;
+  border: 1px solid #c8a97e;
+  background: white;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: #3e2723;
+  color: white;
+}
+
+/* ===== CATEGORY SECTION ===== */
+
+.menu-section {
+  padding: 15px;
+}
+
+.menu-section h2 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #c8a97e;
+  padding-bottom: 5px;
+}
+
+/* ===== GRID ===== */
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+/* ===== CARD ===== */
+
+.menu-card {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.menu-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.menu-content {
+  padding: 12px;
+}
+
+.menu-content h3 {
+  font-size: 16px;
+  margin: 0 0 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.size {
+  font-size: 12px;
+  color: #777;
+}
+
+.price {
+  margin-top: 6px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #3e2723;
+}
+
+/* ===== ALLERGEN TAGS ===== */
+
+.allergens {
+  margin-top: 6px;
+}
+
+.allergen-tag {
+  font-size: 10px;
+  background: #eee;
+  padding: 4px 8px;
+  border-radius: 12px;
+  margin-right: 4px;
+}
+
+/* ===== OPTION BUTTONS (PASTA) ===== */
+
+.option-group {
+  margin-top: 8px;
+}
+
+.option-title {
+  font-size: 12px;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.option-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.option-btn {
+  padding: 6px 10px;
+  font-size: 11px;
+  border-radius: 20px;
+  border: 1px solid #c8a97e;
+  background: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.option-btn:hover {
+  background: #3e2723;
+  color: white;
+}
+
+/* ===== TABLET VIEW ===== */
+
+@media (min-width: 600px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===== DESKTOP VIEW ===== */
+
+@media (min-width: 992px) {
+  .menu-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/* ===== SMOOTH FADE ANIMATION ===== */
+.menu-section {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== ACCORDION CATEGORY ===== */
+.menu-section h2 {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-section.collapsed .menu-grid {
+  display: none;
+}
+
+/* ===== OPTION BUTTON ACTIVE ===== */
+.option-btn.active {
+  background: #3e2723;
+  color: white;
+}
+
+/* ===== ADD TO CART BUTTON ===== */
+.add-btn {
+  margin-top: 8px;
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  background: #c8a97e;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ===== FLOATING CART BAR ===== */
+.cart-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #3e2723;
+  color: white;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  z-index: 999;
+}
+
 
 
 
@@ -152,112 +514,259 @@ footer{
         <p>Fresh • Cozy • Delicious</p>
     </div>
 </header>
+<div class="menu-controls">
+    <input type="text" id="searchInput" placeholder="Search menu items...">
+
+    <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="veg">Veg</button>
+        <button class="filter-btn" data-filter="nonveg">Non-Veg</button>
+    </div>
+</div>
 
 
 <div id="menu-container"></div>
 
 <footer>
-© 2025 Café 97 | All Prices Inclusive of GST
+© 2026 Café 9 Tea7 | All Prices Inclusive of GST
 </footer>
 
 <script>
+	
+document.addEventListener("DOMContentLoaded", function () {
 
 const fallbackImage = "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg";
 
 const menuData = [
 
 /* COFFEE */
-{category:"Coffee", item:"Americano", size:"220 ml", price:70, img:"https://images.pexels.com/photos/414645/pexels-photo-414645.jpeg"},
-{category:"Coffee", item:"Cafe Cappuccino", size:"220 ml", price:90, img:"https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg"},
-{category:"Coffee", item:"Cafe Latte", size:"220 ml", price:90, img:"https://images.pexels.com/photos/1036444/pexels-photo-1036444.jpeg"},
-{category:"Coffee", item:"Mocha", size:"220 ml", price:120, img:"https://images.pexels.com/photos/374885/pexels-photo-374885.jpeg"},
-{category:"Coffee", item:"Caramel Macchiato", size:"220 ml", price:120, img:"https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg"},
-{category:"Coffee", item:"Hazelnut Latte", size:"220 ml", price:120, img:"https://images.pexels.com/photos/1036444/pexels-photo-1036444.jpeg"},
-{category:"Coffee", item:"Irish Coffee", size:"220 ml", price:130, img:"https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg"},
-{category:"Coffee", item:"Classic Hot Chocolate", size:"220 ml", price:120, img:"https://images.pexels.com/photos/374885/pexels-photo-374885.jpeg"},
+{category:"Coffee", item:"Americano", size:"220 ml", price:70, img:"https://images.pexels.com/photos/414645/pexels-photo-414645.jpeg", type:"veg", allergens:[]},
+{category:"Coffee", item:"Cafe Cappuccino", size:"220 ml", price:90, img:"https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg", type:"veg", allergens:["Milk"]},
+{category:"Coffee", item:"Cafe Latte", size:"220 ml", price:90, img:"https://images.pexels.com/photos/1036444/pexels-photo-1036444.jpeg", type:"veg", allergens:["Milk"]},
+{category:"Coffee", item:"Mocha", size:"220 ml", price:120, img:"https://images.pexels.com/photos/374885/pexels-photo-374885.jpeg", type:"veg", allergens:["Milk"]},
+{category:"Coffee", item:"Caramel Macchiato", size:"220 ml", price:120, img:"https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg", type:"veg", allergens:["Milk"]},
+{category:"Coffee", item:"Hazelnut Latte", size:"220 ml", price:120, img:"https://images.pexels.com/photos/1036444/pexels-photo-1036444.jpeg", type:"veg", allergens:["Milk","Nuts"]},
+{category:"Coffee", item:"Irish Coffee", size:"220 ml", price:130, img:"https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg", type:"veg", allergens:["Milk"]},
+{category:"Coffee", item:"Classic Hot Chocolate", size:"220 ml", price:120, img:"https://images.pexels.com/photos/374885/pexels-photo-374885.jpeg", type:"veg", allergens:["Milk"]},
 
 /* TEA */
-{category:"Tea", item:"Green Tea", size:"150 ml", price:40, img:"https://images.pexels.com/photos/230477/pexels-photo-230477.jpeg"},
-{category:"Tea", item:"9 Tea7 Cutting chai", size:"150 ml", price:40, img:"https://tse3.mm.bing.net/th/id/OIP.NX5Nwz0GceTvwrCVtSO1WAHaHa?pid=Api&P=0&h=180"},
-{category:"Tea", item:"Ginger Tea", size:"150 ml", price:40, img:"https://images.pexels.com/photos/5946973/pexels-photo-5946973.jpeg"},
-{category:"Tea", item:"Chamomile Tea", size:"150 ml", price:50, img:"https://images.pexels.com/photos/1417945/pexels-photo-1417945.jpeg"},
-{category:"Tea", item:"Lemon Tea", size:"150 ml", price:40, img:"https://images.pexels.com/photos/1417945/pexels-photo-1417945.jpeg"},
+{category:"Tea", item:"Green Tea", size:"150 ml", price:40, img:"https://images.pexels.com/photos/230477/pexels-photo-230477.jpeg", type:"veg", allergens:[]},
+{category:"Tea", item:"9 Tea7 Cutting Chai", size:"150 ml", price:40, img:"https://tse3.mm.bing.net/th/id/OIP.NX5Nwz0GceTvwrCVtSO1WAHaHa?pid=Api&P=0&h=180", type:"veg", allergens:["Milk"]},
+{category:"Tea", item:"Ginger Tea", size:"150 ml", price:40, img:"https://www.myovacare.com/cdn/shop/articles/cup_of_ginger_root_tea.jpg?v=1718363084", type:"veg", allergens:[]},
+{category:"Tea", item:"Chamomile Tea", size:"150 ml", price:50, img:"https://images.pexels.com/photos/1417945/pexels-photo-1417945.jpeg", type:"veg", allergens:[]},
+{category:"Tea", item:"Lemon Tea", size:"150 ml", price:40, img:"https://5.imimg.com/data5/VP/DK/WV/SELLER-1494947/lemon-tea.jpg", type:"veg", allergens:[]},
+{category:"Tea", item:"Assam Tea", size:"150 ml", price:40, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxi6tQCBVSl5tYrWAi_43wOEK_tU3FMmosyQ&s", type:"veg", allergens:[]},
+{category:"Tea", item:"Lemon Masala Mint Tea", size:"150 ml", price:40, img:"https://s3-ap-south-1.amazonaws.com/betterbutterbucket-silver/jyotibhagat-parasiya20170815201142722.jpeg", type:"veg", allergens:[]},
+{category:"Tea", item:"Masala Milk (Hot)", size:"150 ml", price:40, img:"https://www.sharmispassions.com/wp-content/uploads/2009/10/masalamilk_step20.jpg", type:"veg", allergens:["Milk"]},
 
 /* COLD BEVERAGES */
-{category:"Cold Beverages", item:"Cold Coffee", size:"300 ml", price:130, img:"https://images.pexels.com/photos/96974/pexels-photo-96974.jpeg"},
-{category:"Cold Beverages", item:"Iced Latte", size:"300 ml", price:140, img:"https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg"},
-{category:"Cold Beverages", item:"Chocolate Shake", size:"300 ml", price:150, img:"https://images.pexels.com/photos/103566/pexels-photo-103566.jpeg"},
-{category:"Cold Beverages", item:"Strawberry Shake", size:"300 ml", price:150, img:"https://images.pexels.com/photos/103566/pexels-photo-103566.jpeg"},
-{category:"Cold Beverages", item:"Oreo Shake", size:"300 ml", price:160, img:"https://images.pexels.com/photos/103566/pexels-photo-103566.jpeg"},
+{category:"Cold Beverages", item:"Cold Coffee", size:"300 ml", price:130, img:"https://www.cookclickndevour.com/wp-content/uploads/2021/07/cold-coffee-recipe-1.jpg", type:"veg", allergens:["Milk"]},
+{category:"Cold Beverages", item:"Iced Latte", size:"300 ml", price:140, img:"https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg", type:"veg", allergens:["Milk"]},
+{category:"Cold Beverages", item:"Blackcurrant Mojito", size:"300 ml", price:150, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_8sO_hzfyh22v9b1m-Fm5Ivs81H1-s7D8fw&s", type:"veg", allergens:[]},
+{category:"Cold Beverages", item:"Classic Mojito", size:"300 ml", price:130, img:"https://www.saveur.com/uploads/2007/02/SAVEUR_Mojito_1149-Edit-scaled.jpg?format=auto&optimize=high&width=1440", type:"veg", allergens:[]},
+{category:"Cold Beverages", item:"Fresh Lemon Juice", size:"300 ml", price:40, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi7BuBErcHJMMe8I5dkHJLKHGexjKwKQ4pWA&s", type:"veg", allergens:[]},
+{category:"Cold Beverages", item:"Cold Bournvita", size:"300 ml", price:80, img:"https://tse3.mm.bing.net/th/id/OIP.Rs6UJdyi8kPcLxa84iYfjgFNC7?pid=Api&P=0&h=180", type:"veg", allergens:["Milk"]},
+{category:"Cold Beverages", item:"Cold Horlicks", size:"300 ml", price:80, img:"https://tse1.mm.bing.net/th/id/OIP.KadTOOa0KghT1wX546pQ8AHaHa?pid=Api&P=0&h=180", type:"veg", allergens:["Milk","Gluten"]},
+{category:"Cold Beverages", item:"Fresh Orange Juice", size:"300 ml", price:60, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKwplVhF5un82RmwD9fEDNlkSzs71FB2pwVA&s", type:"veg", allergens:[]},
+{category:"Cold Beverages", item:"Fresh Pineapple Juice", size:"300 ml", price:70, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIB3QRkFGj5TsTDuDI_6UbnJwgKUx2Nw7bvg&s", type:"veg", allergens:[]},
+{category:"Cold Beverages", item:"Fresh Watermelon Juice", size:"230 ml", price:60, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1s6KW6vk8essO9xN9E28YoxuCklZU2S_Gcw&s", type:"veg", allergens:[]},
+{category:"Cold Beverages", item:"Ganga Jamuna", size:"230 ml", price:65, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzU5WnnOjNyuUtYMednXsDxenIo4ogGb4TGA&s", type:"veg", allergens:[]},
+{category:"Cold Beverages", item:"Green Apple Mojito", size:"300 ml", price:150, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD60z5FpI8T1P9cgBzD51MjnEOICceq_bvyQ&s", type:"veg", allergens:[]},
+{category:"Cold Beverages", item:"Jaljeera Soda", size:"250 ml", price:50, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEvCzljkHHR7phv3EVjwsvifvVUavJfXdv6g&s", type:"veg", allergens:[]},
+{category:"Cold Beverages", item:"Lemon Iced Tea", size:"230 ml", price:80, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBk81SvB4fcGjWqps0Ld3pRM33c3G-fIQ_PA&s", type:"veg", allergens:[]},
+{category:"Cold Beverages", item:"Mara Mari", size:"230 ml", price:70, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkW-SrCkhk9OSH6dB-su_vpKcvqnVRK7LD0g&s", type:"veg", allergens:[]},
+{category:"Cold Beverages", item:"Passion Fruit Mojito", size:"300 ml", price:150, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDttiyTE4taofejxGVqrwcFgw4GxUSbTNrzg&s", type:"veg", allergens:[]},
+{category:"Cold Beverages", item:"Peach Iced Tea", size:"300 ml", price:90, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDXar-X5k7qtZUwlrWoeXgxO-ZMVnmkhqa6A&s", type:"veg", allergens:[]},
+{category:"Cold Beverages", item:"Spicy Blue Lagoon", size:"300 ml", price:150, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO_GmtlcrK-GZ9WRsduz4rtPy9Earph0JedQ&s", type:"veg", allergens:[]},
 
-    /* NEW COLD BEVERAGES */
-{category:"Cold Beverages", item:"Cold Bournvita", size:"300 ml", price:120, 
- img:"https://images.pexels.com/photos/5946971/pexels-photo-5946971.jpeg"},
+/* PROTEIN SHAKES */
+{category:"Protein Shakes", item:"Avocado Fig Smoothie", size:"230 ml", price:180, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREyhn8u6iK6rr3FqwEQmbzCkJ0vC1Zogp09w&s", type:"veg", allergens:["Milk"]},
+{category:"Protein Shakes", item:"Banana Basil Seed", size:"230 ml", price:180, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNd_im4Bo2WOvqmETbNSEOVsSnAsv9JptV_A&s", type:"veg", allergens:["Milk"]},
+{category:"Protein Shakes", item:"Banana Basil Seed Shake", size:"230 ml", price:180, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuysKT9YidgVvyLDQr40M6JiWWKz6iIgDozg&s", type:"veg", allergens:["Milk"]},
+{category:"Protein Shakes", item:"Cardamom Banana Smoothie", size:"230 ml", price:180, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRDucO-mRlnzY9R1mcxDWBmsC66HmKTxA7VQ&s", type:"veg", allergens:["Milk"]},
+{category:"Protein Shakes", item:"Fruit Punch", size:"230 ml", price:180, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT39sAvFUX3ZBhWPhhntfGtSiWAiUXbupoaRg&s", type:"veg", allergens:[]},
+{category:"Protein Shakes", item:"Nutty Muesli Smoothie", size:"230 ml", price:180, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6O8GIVnUESPkq0NiYRmgxZqjuywmVKMmNqA&s", type:"veg", allergens:["Milk","Nuts","Gluten"]},
+{category:"Protein Shakes", item:"Protein Power", size:"230 ml", price:180, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDDfEX-5v3XUL1tuEFS2xzDNeHuZkcIKTqZg&s", type:"veg", allergens:["Milk"]},
 
-{category:"Cold Beverages", item:"Cold Horlicks", size:"300 ml", price:120, 
- img:"https://images.pexels.com/photos/103566/pexels-photo-103566.jpeg"},
+/* BAKERY */
+{category:"Bakery", item:"Butter Croissant", size:"80 gms", price:65, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSepDi7X-4hdi-qjBadbKiXuj-fllU2lxnJAA&s", type:"veg", allergens:["Gluten","Milk"]},
+{category:"Bakery", item:"Caprese Croissant", size:"180 gms", price:130, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsTAMdc5nsvEIJAJOUZL-I8KaDkIqgO1pUmQ&s", type:"veg", allergens:["Gluten","Milk"]},
+{category:"Bakery", item:"Chicken Puff", size:"80 gms", price:65, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9pI3cxb-2uxSTjL83IWje4azQeC4ehdCH9Q&s", type:"nonveg", allergens:["Gluten","Milk"]},
+{category:"Bakery", item:"Chilly Chicken Croissant", size:"100 gms", price:120, img:"https://c8.alamy.com/comp/2HPFDCA/brioche-croissant-sandwich-with-spicy-chicken-tikka-slices-tomatoes-and-cheese-2HPFDCA.jpg", type:"nonveg", allergens:["Gluten","Milk"]},
+{category:"Bakery", item:"Chocolate Cookie", size:"30 gms", price:30, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKB_FvngWRMr8eEuuRpt110YY6G1m3UQGk8A&s", type:"veg", allergens:["Gluten","Milk"]},
+{category:"Bakery", item:"Chocolate Croissant", size:"80 gms", price:90, img:"https://bakeandsavor.com/wp-content/uploads/2025/10/Homemade-Chocolate-Croissant-500x500.jpg", type:"veg", allergens:["Gluten","Milk"]},
+{category:"Bakery", item:"Corn Spinach Puff", size:"80 gms", price:50, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNrTq3PWyEHKhXSf4CQxHUIN931eaWCZTbfQ&s", type:"veg", allergens:["Gluten","Milk"]},
+{category:"Bakery", item:"Honey Mustard Smoked Chicken Croissant", size:"180 gms", price:120, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYdSMEjG-inMmw3c-6z05BX1Flu4MDChOeUQ&s", type:"nonveg", allergens:["Gluten","Milk"]},
+{category:"Bakery", item:"Lemon Berry Slice Cake", size:"95 gms", price:60, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj431PJU1IM46GvMzHwvac7utMkh11MJ5tDg&s", type:"veg", allergens:["Gluten","Milk"]},
+{category:"Bakery", item:"Mocha Walnut Travel Cake", size:"60 gms", price:70, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-OeKIMOq5kWWtuv9epi8QNf6bI8CfTNTchQ&s", type:"veg", allergens:["Gluten","Milk","Nuts"]},
+{category:"Bakery", item:"Paneer Khurchan in Baguette", size:"180 gms", price:130, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjjUkY9tDyBo2-GVE99FkASluGj3uUt5nkNA&s", type:"veg", allergens:["Gluten","Milk"]},
+{category:"Bakery", item:"Roasted Zucchini & 3 Pepper Croissant", size:"180 gms", price:90, img:"https://www.shutterstock.com/image-photo/vegetarian-croissant-sandwich-grilled-vegetables-260nw-1516883018.jpg", type:"veg", allergens:["Gluten","Milk"]},
 
-/* PASTA */
-{category:"Pasta", item:"Veg Pasta", size:"Regular", price:140, img:"https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg"},
-{category:"Pasta", item:"Chicken Pasta", size:"Regular", price:160, img:"https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg"},
+/* SANDWICHES */
+{category:"Sandwiches", item:"Avocado Toast", size:"150 gms", price:140, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1LraMlZGo_x_nuUWUMOhXEZKeZv02V2nfRA&s", type:"veg", allergens:["Gluten"]},
+{category:"Sandwiches", item:"Chicken Salami & Egg White Croissant", size:"200 gms", price:150, img:"https://www.shutterstock.com/image-photo/croissant-sandwich-salami-sausage-cheese-600nw-2460555367.jpg", type:"nonveg", allergens:["Gluten","Egg","Milk"]},
+{category:"Sandwiches", item:"Chicken Tikka Sandwich", size:"200 gms", price:80, img:"https://cdn.uengage.io/uploads/64261/image-975633-1754200351.jpeg", type:"nonveg", allergens:["Gluten","Milk"]},
+{category:"Sandwiches", item:"Mushroom Croissant Sandwich", size:"200 gms", price:130, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzbsgQaYSYSzryxbr-ljHEYPeO00gXYEWwDg&s", type:"veg", allergens:["Gluten","Milk"]},
+{category:"Sandwiches", item:"Paneer Tikka Sandwich", size:"200 gms", price:70, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtOUqE5BH44t15ezetsJe_tSFYd8NhaalUKw&s", type:"veg", allergens:["Gluten","Milk"]},
+{category:"Sandwiches", item:"Spinach Corn Cheese Sandwich", size:"200 gms", price:60, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnBAf0ZErwhkCoGwlodYSHHmzsBSimSFXSgA&s", type:"veg", allergens:["Gluten","Milk"]},
+{category:"Sandwiches", item:"Veg Sandwich", size:"200 gms", price:50, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg4reZWanBvSnvVTAP58gkoq_BJu9D_fT4og&s", type:"veg", allergens:["Gluten"]},
 
 /* BURGERS */
-{category:"Burgers", item:"Veg Burger", size:"Regular", price:110, img:"https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg"},
-{category:"Burgers", item:"Chicken Burger", size:"Regular", price:140, img:"https://images.pexels.com/photos/1639562/pexels-photo-1639562.jpeg"},
+{category:"Burgers", item:"Veg Burger", size:"Regular", price:110, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqpCMCouPSDZqvpv2IMhuxCY8plDIEnexGtQ&s", type:"veg", allergens:["Gluten"]},
+{category:"Burgers", item:"Chicken Burger", size:"Regular", price:140, img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV8_Q9_dhNnojwi4KjDfPCyRs3ceY0QqGD4g&s", type:"nonveg", allergens:["Gluten"]},
 
-/* PIZZA */
-{category:"Pizza", item:"Margherita Pizza", size:"Regular", price:180, img:"https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg"},
-{category:"Pizza", item:"Farmhouse Pizza", size:"Regular", price:220, img:"https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg"},
-{category:"Pizza", item:"Chicken Pizza", size:"Regular", price:240, img:"https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg"},
-
-/* DESSERTS */
-{category:"Desserts", item:"Brownie", size:"1 piece", price:90, img:"https://images.pexels.com/photos/45202/brownie-chocolate-dessert-sweet-45202.jpeg"},
-{category:"Desserts", item:"Chocolate Brownie with Ice Cream", size:"1 serving", price:140, img:"https://images.pexels.com/photos/1352278/pexels-photo-1352278.jpeg"},
-{category:"Desserts", item:"Ice Cream Scoop", size:"1 scoop", price:60, img:"https://images.pexels.com/photos/1352278/pexels-photo-1352278.jpeg"}
-
+/* PASTA */
+{
+  category:"Pasta",
+  item:"Vegetable Pasta",
+  size:"Regular",
+  price:140,
+  img:"https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg",
+  type:"veg",
+  allergens:["Gluten","Milk"],
+  types:["Spaghetti","Penne"],
+  sauces:["Cream & Cheese","Pink Sauce","Arrabiata Sauce","Pesto Sauce"]
+},
+{
+  category:"Pasta",
+  item:"Chicken Pasta",
+  size:"Regular",
+  price:160,
+  img:"https://www.indianhealthyrecipes.com/wp-content/uploads/2023/06/chicken-pasta-chicken-spaghetti.jpg",
+  type:"nonveg",
+  allergens:["Gluten","Milk"],
+  types:["Spaghetti","Penne"],
+  sauces:["Cream & Cheese","Pink Sauce","Arrabiata Sauce","Pesto Sauce"]
+}
 ];
+/* ===== GET ELEMENTS ===== */
+const container = document.getElementById("menu-container");
+const searchInput = document.getElementById("searchInput");
+const filterButtons = document.querySelectorAll(".filter-btn");
 
-const grouped = {};
-menuData.forEach(item=>{
-    if(!grouped[item.category]) grouped[item.category]=[];
-    grouped[item.category].push(item);
-});
+let currentFilter = "all";
 
-const container=document.getElementById("menu-container");
+/* ===== RENDER FUNCTION ===== */
+function renderMenu() {
 
-for(const category in grouped){
-    const section=document.createElement("section");
-    section.classList.add("menu-section");
+    container.innerHTML = "";
 
-    const title=document.createElement("h2");
-    title.innerText=category;
-    section.appendChild(title);
+    const searchText = searchInput.value.toLowerCase();
 
-    const grid=document.createElement("div");
-    grid.classList.add("menu-grid");
+    const filtered = menuData.filter(item => {
 
-    grouped[category].forEach(item=>{
-        const card=document.createElement("div");
-        card.classList.add("menu-card");
+        const matchesSearch = item.item.toLowerCase().includes(searchText);
+        const matchesFilter =
+            currentFilter === "all" ||
+            item.type === currentFilter;
 
-        card.innerHTML=`
-            <img src="${item.img}" alt="${item.item}" onerror="this.src='${fallbackImage}'">
-            <div class="menu-content">
-                <h3>${item.item}</h3>
-                <p class="size">${item.size}</p>
-                <div class="price">₹${item.price}</div>
-            </div>
-        `;
-        grid.appendChild(card);
+        return matchesSearch && matchesFilter;
     });
 
-    section.appendChild(grid);
-    container.appendChild(section);
+    if (filtered.length === 0) {
+        container.innerHTML = "<p style='padding:40px;text-align:center;'>No items found</p>";
+        return;
+    }
+
+    const grouped = {};
+
+    filtered.forEach(item => {
+        if (!grouped[item.category]) grouped[item.category] = [];
+        grouped[item.category].push(item);
+    });
+
+    for (const category in grouped) {
+
+        const section = document.createElement("section");
+        section.classList.add("menu-section");
+
+        const title = document.createElement("h2");
+        title.innerText = category;
+        section.appendChild(title);
+
+        const grid = document.createElement("div");
+        grid.classList.add("menu-grid");
+
+        grouped[category].forEach(item => {
+
+            const vegSymbol = item.type === "veg"
+                ? `<span class="food-type veg"><span></span></span>`
+                : `<span class="food-type nonveg"><span></span></span>`;
+
+            const allergensHTML = item.allergens && item.allergens.length > 0
+                ? `<div class="allergens">
+                     ${item.allergens.map(a =>
+                        `<span class="allergen-tag">${a}</span>`).join("")}
+                   </div>`
+                : "";
+
+            const card = document.createElement("div");
+            card.classList.add("menu-card");
+
+           const pastaOptions = item.types
+    ? `
+        <div class="option-group">
+            <p class="option-title">Choose Pasta</p>
+            <div class="option-buttons">
+                ${item.types.map(t =>
+                    `<button class="option-btn">${t}</button>`
+                ).join("")}
+            </div>
+        </div>
+
+        <div class="option-group">
+            <p class="option-title">Choose Sauce</p>
+            <div class="option-buttons">
+                ${item.sauces.map(s =>
+                    `<button class="option-btn">${s}</button>`
+                ).join("")}
+            </div>
+        </div>
+      `
+    : "";
+
+card.innerHTML = `
+    <img src="${item.img}" alt="${item.item}" onerror="this.src='${fallbackImage}'">
+    <div class="menu-content">
+        <h3>${item.item} ${vegSymbol}</h3>
+        <p class="size">${item.size}</p>
+        ${pastaOptions}
+        <div class="price">₹${item.price}</div>
+        ${allergensHTML}
+    </div>
+`;
+
+            grid.appendChild(card);
+        });
+
+        section.appendChild(grid);
+        container.appendChild(section);
+    }
 }
+
+renderMenu();
+
+/* SEARCH */
+searchInput.addEventListener("input", renderMenu);
+
+/* FILTER */
+filterButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+
+        filterButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        currentFilter = btn.dataset.filter;
+        renderMenu();
+    });
+});
+
+});
 
 </script>
 
 </body>
 </html>
+
 
 
