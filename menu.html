@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Café 9tea7 Menu</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: #f6f2ee;
+    margin: 0;
+    padding: 20px;
+}
+
+.menu {
+    max-width: 1100px;
+    margin: auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+h1 {
+    text-align: center;
+    color: #5b2c1d;
+}
+
+.legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.legend span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.veg, .nonveg {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.veg { background: green; }
+.nonveg { background: red; }
+
+.main {
+    font-size: 26px;
+    margin-top: 40px;
+    border-bottom: 3px solid #c89b6d;
+    padding-bottom: 6px;
+    color: #4a2416;
+}
+
+.sub {
+    font-size: 20px;
+    margin-top: 25px;
+    color: #7a4a2e;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px dashed #ddd;
+    font-size: 14px;
+}
+
+th {
+    background: #f2ebe6;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+td:last-child { text-align: right; }
+
+.allergen i {
+    margin-left: 6px;
+    font-size: 13px;
+    color: #888;
+}
+</style>
+</head>
+
+<body>
+<div class="menu">
+
+<h1>☕ Café 97 Menu</h1>
+
+<div class="legend">
+    <span><span class="veg"></span> Veg</span>
+    <span><span class="nonveg"></span> Non-Veg</span>
+    <span><i class="fa-solid fa-cheese"></i> Dairy</span>
+    <span><i class="fa-solid fa-wheat-awn"></i> Gluten</span>
+    <span><i class="fa-solid fa-seedling"></i> Nuts</span>
+    <span><i class="fa-solid fa-egg"></i> Egg</span>
+</div>
+
+<!-- THE CAFÉ -->
+<div class="main">THE CAFÉ</div>
+
+<div class="sub">Coffee</div>
+<table>
+<tr><th>Item</th><th>Qty</th><th>₹</th></tr>
+<tr><td><span class="veg"></span> Americano</td><td>220 ml</td><td>70</td></tr>
+<tr><td><span class="veg"></span> Café Cappuccino <span class="allergen"><i class="fa-solid fa-cheese"></i></span></td><td>220 ml</td><td>90</td></tr>
+<tr><td><span class="veg"></span> Café Latte <span class="allergen"><i class="fa-solid fa-cheese"></i></span></td><td>220 ml</td><td>90</td></tr>
+<tr><td><span class="veg"></span> Classic Hot Chocolate <span class="allergen"><i class="fa-solid fa-cheese"></i></span></td><td>220 ml</td><td>120</td></tr>
+<tr><td><span class="veg"></span> Caramel Macchiato <span class="allergen"><i class="fa-solid fa-cheese"></i></span></td><td>220 ml</td><td>120</td></tr>
+<tr><td><span class="veg"></span> Almond Toffee Latte <span class="allergen"><i class="fa-solid fa-seedling"></i><i class="fa-solid fa-cheese"></i></span></td><td>220 ml</td><td>120</td></tr>
+<tr><td><span class="veg"></span> Tiramisu Latte <span class="allergen"><i class="fa-solid fa-cheese"></i><i class="fa-solid fa-egg"></i></span></td><td>220 ml</td><td>120</td></tr>
+<tr><td><span class="veg"></span> Hazelnut Coffee <span class="allergen"><i class="fa-solid fa-seedling"></i><i class="fa-solid fa-cheese"></i></span></td><td>220 ml</td><td>120</td></tr>
+<tr><td><span class="veg"></span> Filter Kafee</td><td>220 ml</td><td>80</td></tr>
+</table>
+
+<div class="sub">Tea</div>
+<table>
+<tr><th>Item</th><th>Qty</th><th>₹</th></tr>
+<tr><td><span class="veg"></span> Green Tea</td><td>150 ml</td><td>40</td></tr>
+<tr><td><span class="veg"></span> 9Tea7 Cutting Chai <span class="allergen"><i class="fa-solid fa-cheese"></i></span></td><td>150 ml</td><td>40</td></tr>
+<tr><td><span class="veg"></span> Ginger Tea <span class="allergen"><i class="fa-solid fa-cheese"></i></span></td><td>150 ml</td><td>40</td></tr>
+<tr><td><span class="veg"></span> Assam Tea <span class="allergen"><i class="fa-solid fa-cheese"></i></span></td><td>150 ml</td><td>40</td></tr>
+<tr><td><span class="veg"></span> Peppermint Tea</td><td>150 ml</td><td>50</td></tr>
+</table>
+
+<div class="sub">Cold Sips</div>
+<table>
+<tr><th>Item</th><th>Qty</th><th>₹</th></tr>
+<tr><td><span class="veg"></span> Fresh Lemon Juice with Mint</td><td>300 ml</td><td>40</td></tr>
+<tr><td><span class="veg"></span> Peach Iced Tea</td><td>230 ml</td><td>90</td></tr>
+<tr><td><span class="veg"></span> Cold Coffee <span class="allergen"><i class="fa-solid fa-cheese"></i></span></td><td>230 ml</td><td>110</td></tr>
+<tr><td><span class="veg"></span> Jaljeera Soda</td><td>230 ml</td><td>50</td></tr>
+<tr><td><span class="veg"></span> Fresh Watermelon Juice</td><td>230 ml</td><td>60</td></tr>
+<tr><td><span class="veg"></span> Fresh Orange Juice</td><td>230 ml</td><td>60</td></tr>
+</table>
+
+<div class="sub">Protein Shakes</div>
+<table>
+<tr><th>Item</th><th>Qty</th><th>₹</th></tr>
+<tr><td><span class="veg"></span> Cardamom Banana Smoothie <span class="allergen"><i class="fa-solid fa-cheese"></i></span></td><td>230 ml</td><td>120</td></tr>
+<tr><td><span class="veg"></span> Nutty Muesli Smoothie <span class="allergen"><i class="fa-solid fa-seedling"></i><i class="fa-solid fa-cheese"></i></span></td><td>230 ml</td><td>120</td></tr>
+<tr><td><span class="veg"></span> Avocado Fig Smoothie <span class="allergen"><i class="fa-solid fa-seedling"></i></span></td><td>230 ml</td><td>180</td></tr>
+<tr><td><span class="veg"></span> Banana Basil Seed</td><td>230 ml</td><td>150</td></tr>
+</table>
+
+<!-- FOOD TROTTERS -->
+<div class="main">FOOD TROTTERS</div>
+
+<div class="sub">Sandwiches</div>
+<table>
+<tr><th>Item</th><th>Qty</th><th>₹</th></tr>
+<tr><td><span class="veg"></span> Veg Sandwich <span class="allergen"><i class="fa-solid fa-wheat-awn"></i></span></td><td>200 gm</td><td>50</td></tr>
+<tr><td><span class="veg"></span> Spinach Corn Cheese Sandwich <span class="allergen"><i class="fa-solid fa-cheese"></i><i class="fa-solid fa-wheat-awn"></i></span></td><td>200 gm</td><td>60</td></tr>
+<tr><td><span class="veg"></span> Paneer Tikka Sandwich <span class="allergen"><i class="fa-solid fa-cheese"></i><i class="fa-solid fa-wheat-awn"></i></span></td><td>200 gm</td><td>70</td></tr>
+<tr><td><span class="nonveg"></span> Chicken Tikka Sandwich <span class="allergen"><i class="fa-solid fa-wheat-awn"></i></span></td><td>200 gm</td><td>80</td></tr>
+<tr><td><span class="veg"></span> Mushroom Croissant Sandwich <span class="allergen"><i class="fa-solid fa-cheese"></i><i class="fa-solid fa-wheat-awn"></i></span></td><td>200 gm</td><td>130</td></tr>
+<tr><td><span class="nonveg"></span> Chicken Salami & Egg White Croissant <span class="allergen"><i class="fa-solid fa-egg"></i><i class="fa-solid fa-wheat-awn"></i></span></td><td>200 gm</td><td>150</td></tr>
+<tr><td><span class="veg"></span> Avocado Toast <span class="allergen"><i class="fa-solid fa-wheat-awn"></i></span></td><td>150 gm</td><td>140</td></tr>
+</table>
+
+
+<!-- PERFECT JODI -->
+<div class="main">PERFECT JODI</div>
+
+<div class="sub">Indian</div>
+<table>
+<tr><th>Item</th><th>Qty</th><th>₹</th></tr>
+<tr><td><span class="veg"></span> Paneer Tikka Masala with Laccha Paratha <span class="allergen"><i class="fa-solid fa-cheese"></i><i class="fa-solid fa-wheat-awn"></i></span></td><td>320 gm</td><td>150</td></tr>
+<tr><td><span class="veg"></span> Rajmah with Jeera Pulao <span class="allergen"><i class="fa-solid fa-wheat-awn"></i></span></td><td>320 gm</td><td>120</td></tr>
+<tr><td><span class="nonveg"></span> Butter Chicken with Laccha Paratha <span class="allergen"><i class="fa-solid fa-cheese"></i><i class="fa-solid fa-wheat-awn"></i></span></td><td>320 gm</td><td>180</td></tr>
+<tr><td><span class="nonveg"></span> Chicken Curry with Jeera Rice</td><td>320 gm</td><td>180</td></tr>
+</table>
+
+<div class="sub">Pasta</div>
+<table>
+<tr><th>Type</th><th>₹</th></tr>
+<tr><td><span class="veg"></span> Veg Pasta <span class="allergen"><i class="fa-solid fa-cheese"></i><i class="fa-solid fa-wheat-awn"></i></span></td><td>140</td></tr>
+<tr><td><span class="nonveg"></span> Chicken Pasta <span class="allergen"><i class="fa-solid fa-cheese"></i><i class="fa-solid fa-wheat-awn"></i></span></td><td>160</td></tr>
+</table>
+
+</div>
+</body>
+</html>
