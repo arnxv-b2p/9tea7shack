@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preload" as="image" href="https://i.ibb.co/4R13ns79/image.jpg">
     <meta property="og:description" content="Premium coffee, chai & campus conversations at IIT Powai Mumbai.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#140c08">
@@ -337,7 +338,8 @@ View Full Menu
 </section>
 
 <!-- LOCATION -->
-<section class="py-24 reveal">   <div class="bg-black/40 backdrop-blur-lg rounded-3xl p-12 shadow-2xl">
+<section class="py-24 reveal">   
+<div class="bg-black/40 backdrop-blur-lg rounded-3xl p-12 shadow-2xl">
 <div class="grid md:grid-cols-2 gap-12 items-center">
 
 <div>
@@ -356,6 +358,7 @@ width="100%" height="350" style="border:0;" allowfullscreen="" decoding="async" 
 </div>
 
 </div>
+    </div>
 </section>
     <!-- TESTIMONIALS -->
 <section class="py-24 bg-black/40 backdrop-blur-lg reveal">
@@ -458,7 +461,7 @@ width="100%" height="350" style="border:0;" allowfullscreen="" decoding="async" 
   }
 
   updateOpenStatus();
-  window.addEventListener("scroll", handleScroll);
+  window.addEventListener("scroll", handleScroll, { passive: true });
 </script>
 </body>
 </html>
