@@ -1,7 +1,14 @@
-ƒ
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preload" as="image" href="https://i.ibb.co/4R13ns79/image.jpg">
+    <meta property="og:description" content="Premium coffee, chai & campus conversations at IIT Powai Mumbai.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#140c08">
+    <link rel="icon" type="image/png" href="https://i.ibb.co/4R13ns79/image.jpg">
+    <meta name="description" content="9Tea7 Shack – Premium Café at IIT Powai Mumbai. Coffee, Chai & Campus Conversations.">
+<meta property="og:title" content="9Tea7 Shack | IIT Powai Mumbai">
+<meta property="og:image" content="https://i.ibb.co/4R13ns79/image.jpg">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -19,6 +26,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+    body {
+  animation: pageFade 0.8s ease-in-out;
+}
+
+@keyframes pageFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+   .hero-glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(198,161,91,0.4), transparent 70%);
+  filter: blur(80px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
     html {
   scroll-behavior: smooth;
 }
@@ -96,11 +122,12 @@ Order Now
 <main class="max-w-7xl mx-auto px-6 py-16">
 
 <!-- HERO -->
-<section class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+<section class="relative min-h-screen flex items-center justify-center text-center overflow-hidden">
 
   <!-- Background Image -->
   <div class="absolute inset-0">
     <img src="https://i.ibb.co/4R13ns79/image.jpg"
+        loading="eager"
          class="w-full h-full object-cover object-center parallax">
   </div>
 
@@ -111,12 +138,12 @@ Order Now
   <div class="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none"
        style="background-image: url('https://grainy-gradients.vercel.app/noise.svg');">
   </div>
-
+<div class="hero-glow"></div>
   <!-- Content -->
-  <div class="relative z-10 max-w-4xl px-6 animate-fadeUp">
+  <div class="relative z-20 max-w-4xl px-6 animate-fadeUp">
 
     <h1 class="heading-font text-5xl md:text-7xl mb-6 tracking-wider gold-glow">
-      Cafe 9tea7 Shack
+      9tea7 Shack
     </h1>
 
     <p class="text-lg md:text-xl text-gray-300 mb-10">
@@ -144,7 +171,7 @@ Order Now
 
 </section>
 <!-- ABOUT US -->
-<section class="py-24 relative reveal">
+<section id="about" class="py-24 relative reveal">
 
   <div class="max-w-7xl mx-auto px-6">
 
@@ -192,13 +219,13 @@ Order Now
 </section>
 
 <!-- MENU -->
-<section class="text-center mb-20 reveal">
+<section class="py-24 text-center reveal">
 <h2 class="heading-font text-4xl mb-12">Menu Highlights</h2>
 
 <div class="grid md:grid-cols-3 gap-10">
 
 <div onclick="window.location='menu.html'"
-class="bg-black/50 backdrop-blur-md p-8 rounded-3xl hover:scale-105 transition duration-500 cursor-pointer shadow-xl">
+class="bg-white/5 border border-white/10 backdrop-blur-md p-8 rounded-3xl hover:scale-105 transition duration-500 cursor-pointer shadow-xl">
 <h3 class="text-xl mb-6 text-[#c6a15b]">Coffee</h3>
 <ul class="space-y-3 text-gray-300">
 <li>Americano - ₹70</li>
@@ -209,7 +236,7 @@ class="bg-black/50 backdrop-blur-md p-8 rounded-3xl hover:scale-105 transition d
 </div>
 
 <div onclick="window.location='menu.html'"
-class="bg-black/50 backdrop-blur-md p-8 rounded-3xl hover:scale-105 transition duration-500 cursor-pointer shadow-xl">
+class="bg-white/5 border border-white/10 backdrop-blur-xl p-8 rounded-3xl hover:scale-105 transition duration-500 cursor-pointer shadow-xl">
 <h3 class="text-xl mb-6 text-[#c6a15b]">Tea Specialties</h3>
 <ul class="space-y-3 text-gray-300">
 <li>Green Tea - ₹40</li>
@@ -220,7 +247,7 @@ class="bg-black/50 backdrop-blur-md p-8 rounded-3xl hover:scale-105 transition d
 </div>
 
 <div onclick="window.location='menu.html'"
-class="bg-black/50 backdrop-blur-md p-8 rounded-3xl hover:scale-105 transition duration-500 cursor-pointer shadow-xl">
+class="bg-white/5 border border-white/10 backdrop-blur-xl p-8 rounded-3xl hover:scale-105 transition duration-500 cursor-pointer shadow-xl">
 <h3 class="text-xl mb-6 text-[#c6a15b]">Cold Sips</h3>
 <ul class="space-y-3 text-gray-300">
 <li>Peach Iced Tea - ₹90</li>
@@ -241,52 +268,78 @@ View Full Menu
 </section>
 
 <!-- GALLERY -->
-<section class="mb-20 text-center reveal">
-<h2 class="heading-font text-4xl mb-10">Our Café Moments</h2>
+<section id="gallery" class="py-24 text-center reveal">
+  <h2 class="heading-font text-4xl mb-10">Our Café Moments</h2>
 
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 
-  <div class="aspect-[4/3] overflow-hidden rounded-2xl shadow-lg">
-    <img src="Arabic.jpeg"
-        decoding="async" loading="lazy"
-         class="w-full h-full object-cover hover:scale-110 transition duration-500">
+    <!-- Item -->
+    <div class="relative group aspect-[4/3] overflow-hidden rounded-2xl shadow-xl">
+      <img src="Arabic.jpeg"
+           loading="lazy"
+           class="w-full h-full object-cover transition duration-700 group-hover:scale-110 group-hover:brightness-75">
+
+      <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
+        <p class="text-[#c6a15b] text-lg font-semibold">Signature Coffee</p>
+      </div>
+    </div>
+
+    <div class="relative group aspect-[4/3] overflow-hidden rounded-2xl shadow-xl">
+      <img src="Cottage.jpeg"
+           loading="lazy"
+           class="w-full h-full object-cover transition duration-700 group-hover:scale-110 group-hover:brightness-75">
+
+      <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
+        <p class="text-[#c6a15b] text-lg font-semibold">Fresh Bites</p>
+      </div>
+    </div>
+
+    <div class="relative group aspect-[4/3] overflow-hidden rounded-2xl shadow-xl">
+      <img src="avacado.jpeg"
+           loading="lazy"
+           class="w-full h-full object-cover transition duration-700 group-hover:scale-110 group-hover:brightness-75">
+
+      <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
+        <p class="text-[#c6a15b] text-lg font-semibold">Healthy Specials</p>
+      </div>
+    </div>
+
+    <div class="relative group aspect-[4/3] overflow-hidden rounded-2xl shadow-xl">
+      <img src="herbrice.jpeg"
+           loading="lazy"
+           class="w-full h-full object-cover transition duration-700 group-hover:scale-110 group-hover:brightness-75">
+
+      <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
+        <p class="text-[#c6a15b] text-lg font-semibold">Comfort Meals</p>
+      </div>
+    </div>
+
+    <div class="relative group aspect-[4/3] overflow-hidden rounded-2xl shadow-xl">
+      <img src="loaded.jpeg"
+           loading="lazy"
+           class="w-full h-full object-cover transition duration-700 group-hover:scale-110 group-hover:brightness-75">
+
+      <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
+        <p class="text-[#c6a15b] text-lg font-semibold">Loaded Delights</p>
+      </div>
+    </div>
+
+    <div class="relative group aspect-[4/3] overflow-hidden rounded-2xl shadow-xl">
+      <img src="nonveg.jpeg"
+           loading="lazy"
+           class="w-full h-full object-cover transition duration-700 group-hover:scale-110 group-hover:brightness-75">
+
+      <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
+        <p class="text-[#c6a15b] text-lg font-semibold">Chef Specials</p>
+      </div>
+    </div>
+
   </div>
-
-  <div class="aspect-[4/3] overflow-hidden rounded-2xl shadow-lg">
-    <img src="Cottage.jpeg"
-        decoding="async" loading="lazy"
-         class="w-full h-full object-cover hover:scale-110 transition duration-500">
-  </div>
-
-  <div class="aspect-[4/3] overflow-hidden rounded-2xl shadow-lg">
-    <img src="avacado.jpeg"
-        decoding="async" loading="lazy"
-         class="w-full h-full object-cover hover:scale-110 transition duration-500">
-  </div>
-
-  <div class="aspect-[4/3] overflow-hidden rounded-2xl shadow-lg">
-    <img src="herbrice.jpeg"
-        decoding="async" loading="lazy"
-         class="w-full h-full object-cover hover:scale-110 transition duration-500">
-  </div>
-
-  <div class="aspect-[4/3] overflow-hidden rounded-2xl shadow-lg">
-    <img src="loaded.jpeg"
-        decoding="async" loading="lazy"
-         class="w-full h-full object-cover hover:scale-110 transition duration-500">
-  </div>
-
-  <div class="aspect-[4/3] overflow-hidden rounded-2xl shadow-lg">
-    <img src="nonveg.jpeg"
-        decoding="async" loading="lazy"
-         class="w-full h-full object-cover hover:scale-110 transition duration-500">
-  </div>
-
-</div>
 </section>
 
 <!-- LOCATION -->
-<section class="bg-black/40 backdrop-blur-lg rounded-3xl p-12 mb-20 shadow-2xl reveal">
+<section class="py-24 reveal">   
+<div class="bg-black/40 backdrop-blur-lg rounded-3xl p-12 shadow-2xl">
 <div class="grid md:grid-cols-2 gap-12 items-center">
 
 <div>
@@ -296,7 +349,7 @@ Located inside IIT Bombay campus, Café 9tea7 Shack is your go-to spot for quick
 </p>
 <p class="text-gray-400 mb-2"><strong>Address:</strong> IIT Bombay, Powai, Mumbai</p>
 <p class="text-gray-400 mb-2"><strong>Timings:</strong> 12:00 PM – 12:00 AM</p>
-<p class="text-green-400 font-semibold">🟢 Open Now</p>
+<p id="openStatus" class="font-semibold"></p>
 </div>
 
 <div class="rounded-3xl overflow-hidden shadow-2xl">
@@ -305,6 +358,7 @@ width="100%" height="350" style="border:0;" allowfullscreen="" decoding="async" 
 </div>
 
 </div>
+    </div>
 </section>
     <!-- TESTIMONIALS -->
 <section class="py-24 bg-black/40 backdrop-blur-lg reveal">
@@ -320,7 +374,7 @@ width="100%" height="350" style="border:0;" allowfullscreen="" decoding="async" 
     <div class="grid md:grid-cols-2 gap-10">
 
       <!-- Testimonial 1 -->
-      <div class="bg-black/50 p-8 rounded-3xl shadow-xl hover:-translate-y-2 transition duration-500">
+      <div class="bg-white/5 border border-white/10 backdrop-blur-xl p-8 rounded-3xl shadow-xl hover:-translate-y-2 transition duration-500">
 
         <div class="flex justify-center mb-4 text-[#c6a15b]">
           ★★★★★
@@ -337,7 +391,7 @@ width="100%" height="350" style="border:0;" allowfullscreen="" decoding="async" 
       </div>
 
       <!-- Testimonial 2 -->
-      <div class="bg-black/50 p-8 rounded-3xl shadow-xl hover:-translate-y-2 transition duration-500">
+      <div class="bg-white/5 border border-white/10 backdrop-blur-xl p-8 rounded-3xl shadow-xl hover:-translate-y-2 transition duration-500">
 
         <div class="flex justify-center mb-4 text-[#c6a15b]">
           ★★★★★
@@ -362,41 +416,52 @@ width="100%" height="350" style="border:0;" allowfullscreen="" decoding="async" 
 </main>
 
 <custom-footer></custom-footer>
+    
 
 </div>
-
-<script>feather.replace();</script>
-  <script>
-const parallax = document.querySelector(".parallax");
-const reveals = document.querySelectorAll(".reveal");
-
-let ticking = false;
-
-window.addEventListener("scroll", () => {
-  if (!ticking) {
-    window.requestAnimationFrame(() => {
-
-      /* Parallax */
-      if (parallax) {
-        let offset = window.pageYOffset;
-        parallax.style.transform = "translateY(" + offset * 0.3 + "px)";
-      }
-
-      /* Reveal */
-      reveals.forEach((el) => {
-        const windowHeight = window.innerHeight;
-        const revealTop = el.getBoundingClientRect().top;
-        if (revealTop < windowHeight - 100) {
-          el.classList.add("active");
-        }
-      });
-
-      ticking = false;
-    });
-
-    ticking = true;
+    <script>
+  // Feather Icons
+  if (window.feather) {
+    feather.replace();
   }
-});
+
+  const parallax = document.querySelector(".parallax");
+  const reveals = document.querySelectorAll(".reveal");
+  const openStatus = document.getElementById("openStatus");
+
+  function updateOpenStatus() {
+    const now = new Date();
+    const hour = now.getHours();
+
+    if (openStatus) {
+      if (hour >= 12 && hour < 24) {
+        openStatus.textContent = "🟢 Open Now";
+        openStatus.classList.add("text-green-400");
+      } else {
+        openStatus.textContent = "🔴 Closed";
+        openStatus.classList.add("text-red-400");
+      }
+    }
+  }
+
+  function handleScroll() {
+    if (parallax) {
+      let offset = window.pageYOffset;
+      parallax.style.transform = "translateY(" + offset * 0.3 + "px)";
+    }
+
+    reveals.forEach((el) => {
+      const windowHeight = window.innerHeight;
+      const revealTop = el.getBoundingClientRect().top;
+
+      if (revealTop < windowHeight - 100) {
+        el.classList.add("active");
+      }
+    });
+  }
+
+  updateOpenStatus();
+  window.addEventListener("scroll", handleScroll, { passive: true });
 </script>
 </body>
 </html>
