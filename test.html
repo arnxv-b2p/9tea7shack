@@ -22,7 +22,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-    .hero-glow {
+    body {
+  animation: pageFade 0.8s ease-in-out;
+}
+
+@keyframes pageFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+   .hero-glow {
   position: absolute;
   width: 500px;
   height: 500px;
@@ -31,7 +39,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 0;
+  z-index: 1;
 }
     html {
   scroll-behavior: smooth;
@@ -127,7 +135,7 @@ Order Now
   </div>
 <div class="hero-glow"></div>
   <!-- Content -->
-  <div class="relative z-10 max-w-4xl px-6 animate-fadeUp">
+  <div class="relative z-20 max-w-4xl px-6 animate-fadeUp">
 
     <h1 class="heading-font text-5xl md:text-7xl mb-6 tracking-wider gold-glow">
       9tea7 Shack
@@ -223,7 +231,7 @@ class="bg-white/5 border border-white/10 backdrop-blur-md p-8 rounded-3xl hover:
 </div>
 
 <div onclick="window.location='menu.html'"
-class="bg-white/5 border border-white/10 backdrop-blur-xl backdrop-blur-md p-8 rounded-3xl hover:scale-105 transition duration-500 cursor-pointer shadow-xl">
+class="bg-white/5 border border-white/10 backdrop-blur-xl p-8 rounded-3xl hover:scale-105 transition duration-500 cursor-pointer shadow-xl">
 <h3 class="text-xl mb-6 text-[#c6a15b]">Tea Specialties</h3>
 <ul class="space-y-3 text-gray-300">
 <li>Green Tea - ₹40</li>
@@ -234,7 +242,7 @@ class="bg-white/5 border border-white/10 backdrop-blur-xl backdrop-blur-md p-8 r
 </div>
 
 <div onclick="window.location='menu.html'"
-class="bg-white/5 border border-white/10 backdrop-blur-xl backdrop-blur-md p-8 rounded-3xl hover:scale-105 transition duration-500 cursor-pointer shadow-xl">
+class="bg-white/5 border border-white/10 backdrop-blur-xl p-8 rounded-3xl hover:scale-105 transition duration-500 cursor-pointer shadow-xl">
 <h3 class="text-xl mb-6 text-[#c6a15b]">Cold Sips</h3>
 <ul class="space-y-3 text-gray-300">
 <li>Peach Iced Tea - ₹90</li>
@@ -401,42 +409,46 @@ width="100%" height="350" style="border:0;" allowfullscreen="" decoding="async" 
 </main>
 
 <custom-footer></custom-footer>
-components/footer.js
     
 
 </div>
 
 <script>feather.replace();</script>
   <script>
-const parallax = document.querySelector(".parallax");
-const reveals = document.querySelectorAll(".reveal");
+<script>
+document.addEventListener("DOMContentLoaded", () => {
 
-let ticking = false;
+  feather.replace();
 
-window.addEventListener("scroll", () => {
-  if (!ticking) {
-    window.requestAnimationFrame(() => {
+  const parallax = document.querySelector(".parallax");
+  const reveals = document.querySelectorAll(".reveal");
 
-      /* Parallax */
-      if (parallax) {
-        let offset = window.pageYOffset;
-        parallax.style.transform = "translateY(" + offset * 0.3 + "px)";
-      }
+  let ticking = false;
 
-      /* Reveal */
-      reveals.forEach((el) => {
-        const windowHeight = window.innerHeight;
-        const revealTop = el.getBoundingClientRect().top;
-        if (revealTop < windowHeight - 100) {
-          el.classList.add("active");
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+
+        if (parallax) {
+          let offset = window.pageYOffset;
+          parallax.style.transform = "translateY(" + offset * 0.3 + "px)";
         }
+
+        reveals.forEach((el) => {
+          const windowHeight = window.innerHeight;
+          const revealTop = el.getBoundingClientRect().top;
+          if (revealTop < windowHeight - 100) {
+            el.classList.add("active");
+          }
+        });
+
+        ticking = false;
       });
 
-      ticking = false;
-    });
+      ticking = true;
+    }
+  });
 
-    ticking = true;
-  }
 });
 </script>
 </body>
