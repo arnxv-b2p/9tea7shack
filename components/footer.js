@@ -35,7 +35,7 @@ class Footer extends HTMLElement {
         </div>
 
         <div class="border-t border-white/10 text-center py-6 text-sm">
-          © 2025 9Tea7 Shack. Crafted with ☕ at IIT Bombay.
+          © 2025 9Tea7 Shack. Crafted with ❤️ by Arnav.
         </div>
 
       </footer>
