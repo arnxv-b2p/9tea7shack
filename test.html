@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>9Tea7 Shack | IIT Powai Mumbai</title>
+
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        brand: {
+          primary: "#c2410c",
+          dark: "#7c2d12",
+          light: "#f8f5f0"
+        }
+      }
+    }
+  }
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<script src="components/navbar.js"></script>
+<script src="components/footer.js"></script>
+
+</head>
+
+<body class="bg-brand-light text-gray-800">
+
+<custom-navbar></custom-navbar>
+
+<main class="max-w-7xl mx-auto px-6 py-10">
+
+<!-- HERO SECTION -->
+<section class="bg-white rounded-3xl p-8 md:p-14 mb-16 shadow-sm">
+<div class="flex flex-col md:flex-row items-center gap-10">
+
+<div class="md:w-1/2">
+<h1 class="text-4xl md:text-5xl font-bold text-brand-dark mb-4">
+9Tea7 Shack
+</h1>
+
+<p class="text-lg text-gray-600 mb-8">
+Where every sip tells a story.
+</p>
+
+<div class="flex flex-wrap gap-4">
+<a href="menu.html"
+class="bg-brand-primary hover:opacity-90 text-white font-semibold py-3 px-6 rounded-full transition duration-300 inline-flex items-center shadow-md">
+Explore Full Menu
+<i data-feather="arrow-right" class="ml-2"></i>
+</a>
+
+<a href="https://prod-gkcust.netlify.app/#/home"
+class="border border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white font-semibold py-3 px-6 rounded-full transition duration-300">
+Order Now
+</a>
+</div>
+</div>
+
+<div class="md:w-1/2">
+<div class="h-[380px] overflow-hidden rounded-2xl shadow-md">
+<img src="https://i.ibb.co/4R13ns79/image.jpg"
+class="w-full h-full object-cover object-center">
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- ABOUT SECTION -->
+<section class="bg-white rounded-3xl p-8 md:p-12 mb-16 shadow-sm">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-brand-dark mb-4">Our Story</h2>
+<div class="w-20 h-1 bg-brand-primary mx-auto rounded-full"></div>
+</div>
+
+<div class="flex flex-col md:flex-row items-center gap-10">
+
+<div class="md:w-1/2">
+<img src="https://i.ibb.co/pv3wHdz4/image2.jpg"
+class="rounded-2xl shadow-md w-full h-72 object-cover">
+</div>
+
+<div class="md:w-1/2">
+<h3 class="text-2xl font-semibold text-brand-dark mb-4">
+A Cozy Corner in IIT Bombay
+</h3>
+
+<p class="text-gray-600 mb-4">
+Founded in 2025, 9Tea7 Shack has become the go-to spot for students, faculty, and locals alike. Our mission is simple: serve quality tea and snacks with warmth and comfort.
+</p>
+
+<p class="text-gray-600 mb-4">
+The 9Tea7 Shack, a vibrant new café within the Project Evergreen Complex, made possible with support of the Class of 1997.
+</p>
+
+<p class="text-gray-600 mb-6">
+The playful name '9Tea7' is a tribute to their light-hearted spirit and unforgettable campus memories.
+</p>
+
+<div class="flex flex-wrap gap-6 text-sm text-gray-600">
+<div class="flex items-center">
+<i data-feather="clock" class="text-brand-primary mr-2"></i>
+Open 12 Noon - 12 Midnight
+</div>
+
+<div class="flex items-center">
+<i data-feather="map-pin" class="text-brand-primary mr-2"></i>
+IIT Powai, Mumbai
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- MENU PREVIEW -->
+<section class="bg-white rounded-3xl p-8 md:p-12 mb-16 shadow-sm">
+
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-brand-dark mb-4">
+Menu Highlights
+</h2>
+<div class="w-20 h-1 bg-brand-primary mx-auto rounded-full"></div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+<!-- Coffee -->
+<div class="bg-brand-light p-6 rounded-2xl hover:shadow-md transition duration-300">
+<h3 class="text-xl font-semibold text-brand-dark mb-4 flex items-center">
+<i data-feather="coffee" class="text-brand-primary mr-2"></i>
+Coffee
+</h3>
+
+<ul class="space-y-2 text-gray-700">
+<li class="flex justify-between"><span>Americano</span><span>₹70</span></li>
+<li class="flex justify-between"><span>Cafe Cappuccino</span><span>₹90</span></li>
+<li class="flex justify-between"><span>Cafe Latte</span><span>₹90</span></li>
+<li class="flex justify-between"><span>Hot Chocolate</span><span>₹120</span></li>
+</ul>
+</div>
+
+<!-- Tea -->
+<div class="bg-brand-light p-6 rounded-2xl hover:shadow-md transition duration-300">
+<h3 class="text-xl font-semibold text-brand-dark mb-4 flex items-center">
+<i data-feather="feather" class="text-brand-primary mr-2"></i>
+Tea Specialties
+</h3>
+
+<ul class="space-y-2 text-gray-700">
+<li class="flex justify-between"><span>Green Tea</span><span>₹40</span></li>
+<li class="flex justify-between"><span>9Tea7 Cutting Chai</span><span>₹40</span></li>
+<li class="flex justify-between"><span>Ginger Tea</span><span>₹40</span></li>
+<li class="flex justify-between"><span>Chamomile Tea</span><span>₹50</span></li>
+</ul>
+</div>
+
+<!-- Cold -->
+<div class="bg-brand-light p-6 rounded-2xl hover:shadow-md transition duration-300">
+<h3 class="text-xl font-semibold text-brand-dark mb-4 flex items-center">
+<i data-feather="droplet" class="text-brand-primary mr-2"></i>
+Cold Sips
+</h3>
+
+<ul class="space-y-2 text-gray-700">
+<li class="flex justify-between"><span>Peach Iced Tea</span><span>₹90</span></li>
+<li class="flex justify-between"><span>Cold Coffee</span><span>₹110</span></li>
+<li class="flex justify-between"><span>Fresh Lemon Mint</span><span>₹40</span></li>
+<li class="flex justify-between"><span>Fresh Orange Juice</span><span>₹60</span></li>
+</ul>
+</div>
+
+</div>
+
+<div class="text-center mt-10">
+<a href="menu.html"
+class="bg-brand-primary hover:opacity-90 text-white font-semibold py-3 px-8 rounded-full transition duration-300 inline-flex items-center shadow-md">
+View Full Menu
+<i data-feather="arrow-right" class="ml-2"></i>
+</a>
+</div>
+
+</section>
+
+
+<!-- GALLERY -->
+<section class="mb-16">
+<div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+<img src="https://i.ibb.co/PsFFySCg/Upload-1.jpg"
+class="rounded-2xl shadow-md h-52 object-cover hover:scale-105 transition duration-300">
+
+<img src="https://i.ibb.co/Gfb3wVcL/upload-2.jpg"
+class="rounded-2xl shadow-md h-52 object-cover hover:scale-105 transition duration-300">
+
+<img src="https://i.ibb.co/9k7YSWPx/upload-3.jpg"
+class="rounded-2xl shadow-md h-52 object-cover hover:scale-105 transition duration-300">
+</div>
+
+<div class="text-center mt-10">
+<a href="images.html"
+class="bg-brand-primary hover:opacity-90 text-white font-semibold py-3 px-8 rounded-full transition duration-300 inline-flex items-center shadow-md">
+View Gallery
+<i data-feather="arrow-right" class="ml-2"></i>
+</a>
+</div>
+</section>
+
+
+<!-- TESTIMONIALS -->
+<section class="bg-white rounded-3xl p-8 md:p-12 shadow-sm mb-10">
+
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-brand-dark mb-4">
+What People Say
+</h2>
+<div class="w-20 h-1 bg-brand-primary mx-auto rounded-full"></div>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+<div class="bg-brand-light p-6 rounded-2xl">
+<h4 class="font-semibold mb-2">Chetan More</h4>
+<p class="text-gray-600">
+“Perfect late-night chai spot inside IIT. Cozy and relaxing.”
+</p>
+</div>
+
+<div class="bg-brand-light p-6 rounded-2xl">
+<h4 class="font-semibold mb-2">Abhishek Jhadav</h4>
+<p class="text-gray-600">
+“Great coffee and vibe. Definitely a campus favourite.”
+</p>
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<custom-footer></custom-footer>
+
+<script src="script.js"></script>
+<script>feather.replace();</script>
+
+</body>
+</html>
