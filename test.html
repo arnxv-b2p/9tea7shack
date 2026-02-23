@@ -4,7 +4,7 @@
 <head>
     <meta name="description" content="9Tea7 Shack – Premium Café at IIT Powai Mumbai. Coffee, Chai & Campus Conversations.">
 <meta property="og:title" content="9Tea7 Shack | IIT Powai Mumbai">
-<meta property="og:image" content="your-hero-image-link">
+<meta property="og:image" content="https://i.ibb.co/4R13ns79/image.jpg">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -22,6 +22,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+    .hero-glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(198,161,91,0.4), transparent 70%);
+  filter: blur(80px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
     html {
   scroll-behavior: smooth;
 }
@@ -201,7 +212,7 @@ Order Now
 <div class="grid md:grid-cols-3 gap-10">
 
 <div onclick="window.location='menu.html'"
-class="bg-white/5 border border-white/10 backdrop-blur-xl backdrop-blur-md p-8 rounded-3xl hover:scale-105 transition duration-500 cursor-pointer shadow-xl">
+class="bg-white/5 border border-white/10 backdrop-blur-md p-8 rounded-3xl hover:scale-105 transition duration-500 cursor-pointer shadow-xl">
 <h3 class="text-xl mb-6 text-[#c6a15b]">Coffee</h3>
 <ul class="space-y-3 text-gray-300">
 <li>Americano - ₹70</li>
@@ -244,7 +255,7 @@ View Full Menu
 </section>
 
 <!-- GALLERY -->
-<section id="about" class="mb-20 text-center reveal">
+<section id="gallery" class="mb-20 text-center reveal">
   <h2 class="heading-font text-4xl mb-10">Our Café Moments</h2>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -389,58 +400,9 @@ width="100%" height="350" style="border:0;" allowfullscreen="" decoding="async" 
 
 </main>
 
-<custom-footer>
-    class Footer extends HTMLElement {
-  connectedCallback() {
-    this.innerHTML = `
-      <footer class="bg-black/80 backdrop-blur-lg border-t border-white/10 text-gray-400 mt-20">
-
-        <div class="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-3 gap-10">
-
-          <!-- Brand -->
-          <div>
-            <h3 class="text-2xl text-[#c6a15b] heading-font mb-4">9Tea7 Shack</h3>
-            <p class="text-sm leading-relaxed">
-              Serving coffee, chai and campus conversations at IIT Bombay.
-              A cozy space for students, faculty and friends.
-            </p>
-          </div>
-
-          <!-- Quick Links -->
-          <div>
-            <h4 class="text-lg text-white mb-4">Quick Links</h4>
-            <ul class="space-y-2">
-              <li><a href="index.html" class="hover:text-[#c6a15b] transition">Home</a></li>
-              <li><a href="menu.html" class="hover:text-[#c6a15b] transition">Menu</a></li>
-              <li><a href="#about" class="hover:text-[#c6a15b] transition">About</a></li>
-              <li><a href="#gallery" class="hover:text-[#c6a15b] transition">Gallery</a></li>
-            </ul>
-          </div>
-
-          <!-- Contact -->
-          <div>
-            <h4 class="text-lg text-white mb-4">Contact</h4>
-            <p>IIT Bombay, Powai, Mumbai</p>
-            <p>12:00 PM – 12:00 AM</p>
-            <div class="flex gap-4 mt-4 text-[#c6a15b]">
-              <a href="#"><i data-feather="instagram"></i></a>
-              <a href="#"><i data-feather="phone"></i></a>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="border-t border-white/10 text-center py-6 text-sm">
-          © 2025 9Tea7 Shack. Crafted with ☕ at IIT Bombay.
-        </div>
-
-      </footer>
-    `;
-  }
-}
-
-customElements.define("custom-footer", Footer);
-</custom-footer>
+<custom-footer></custom-footer>
+components/footer.js
+    
 
 </div>
 
